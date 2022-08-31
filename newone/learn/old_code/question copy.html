@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block head%}
+<script> 
+    document.addEventListener('DOMContentLoaded', function(){
+        let txt = document.getElementById('txt');
+        txt.addEventListener('input', upThing);
+    });
+
+    function upThing(ev){
+        let num = ev.charCode;
+        let letter = String.fromCharCode(num);
+        // console.log(ev.type, num, letter, ev.target.value);
+        // ev.target.value = ev.target.value.toUpperCase();
+
+        // My code
+        // if (ev.target.value == 'x') {
+        //     ev.target.value = '𝑥';
+        // } 
+        
+        // let val = ev.target.value.replace("x", "𝑥");
+        
+
+        // WIP
+        const powers = ["⁰",  "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
+        const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+        // for (let i=0; i < 10; i++) {
+        //     if (ev.target.value = numbers[i]) {
+        //         ev.target.value = powers[i];
+        //     }
+        // }
+
+            
+        const array = ["one", "two", "three"]
+        numbers.forEach(function (item, index) {
+        // console.log(item, index);
+        // console.log(powers[index]);
+        ev.target.value = ev.target.value.replace("^" + item, powers[index]);
+        });
+
+
+
+
+
+        // ev.target.value = ev.target.value.replace("^0", "⁰")  .replace("^1", "¹") .replace("^2", "²") .replace("^3", "³") .replace("^4", "⁴") .replace("^5", "⁵") .replace("^6", "⁶") .replace("^7", "⁷") .replace("^8", "⁸") .replace("^9", "⁹")
+        // if (ev.target.value in numbers) {
+        //     // num = '^';
+        //     i = "Work";
+        //     console.log(i);
+        //     num = ev.target.value;
+        //     temp = numbers.findIndex(numg)
+        //     console.log(temp)
+        //     power = powers[temp];
+        //     ev.target.value = ev.target.value.replace(num, power);
+        //     console.log(num, temp, power, ev.target.value);
+        // }
+
+        // function numg(nungs) {
+        //     return nungs = ev.target.value
+        // }
+
+        ev.target.value = ev.target.value.replace("x", "𝑥").replace("(", "()")
+        // console.log(powers, numbers)
+    }
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- <button type=""><input type="text" id="txt"/>Submit</button> -->
+{% if c %}
+    <p>SUP MY BOIS</p>
+{% else %}
+<p> Fully Expand this expression : {{ Question }}</p>
+
+<!-- <form id="problem" method="POST"> -->
+<form id="problem">
+<input type="text", id="txt">
+<input type="submit">
+{% csrf_token %}
+
+
+</form>
+
+<script>
+
+var URL="{% url 'question_post' %}"
+function Unread(){
+        // var data = {'count': '5', 'X-csrfmiddlewaretoken': csrfmiddlewaretoken};
+        var data = "xyz testing"
+        console.log(data)
+        $.post(URL, data);
+}
+</script>
+
+
+
+{% endif %}
+{% endblock %}

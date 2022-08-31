@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Points: {{ points }}</h1>
+<p> Fully Expand thiees expression : {{ b }}</p>
+{% if a == ua or a2 == ua2 %}
+<p>{{ a }} was the correct answer</p>
+{% elif a2 == ua%}
+<p>WTHAT THE FUCK</p>
+{% else %}
+<p> The correct answer was {{ a }}, your answer was {{ ua }}</p>
+{% endif %}
+<a href="math">Math</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+<style>
+            .bg_img {
+                background-image: url("{% static 'images/img2.jpg' %}");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+                height: 100%;
+                /* margin-top: -18px; */
+
+            }
+        </style>
+
+        <!-- <div class="bg_img"></div> -->
+        <!-- <div class="bg_img"><img src="{% static 'images/img2.jpg'%}"></div> -->
+        <div class="bg_img"><img></div>

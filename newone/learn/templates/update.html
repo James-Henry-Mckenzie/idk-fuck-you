@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style_home.css'%}">
+        <title>Onslow Website</title>
+    </head>
+    <body>
+        <header>
+            <h1> Convertng Text as you Type</h1>
+        </header>
+        <main>
+            <input type="text" id="txt"/>
+        </main>
+        <script> 
+            document.addEventListener('DOMContentLoaded', function(){
+                let txt = document.getElementById('txt');
+                txt.addEventListener('input', upThing);
+            });
+        
+            function upThing(ev){
+                let num = ev.charCode;
+                let letter = String.fromCharCode(num);
+                console.log(ev.type, num, letter, ev.target.value);
+                ev.target.value = ev.target.value.toUpperCase();
+            }
+        
+        </script>
+        
+    </body>
+</html>
